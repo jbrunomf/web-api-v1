@@ -1,9 +1,13 @@
+using api.Data;
 using api.Models;
 using api.Repository;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+
+//Serviços
+builder.Services.AddDbContext<ApplicationDbContext>();
 
 app.MapGet("/", () => "Hello World!");
 
